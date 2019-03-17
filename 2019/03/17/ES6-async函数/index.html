@@ -19,7 +19,7 @@
     <meta name="description" content>
     <meta name="author" content="John Doe">
     <meta name="keywords" content>
-    <title>Hexo</title>
+    <title>ES6-async函数 ~ Hexo</title>
     <link rel="stylesheet" href="/css/Material_Icons.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/main.css">
@@ -84,8 +84,8 @@
   <div class="page-header header-filter" data-parallax="false" style="background-image: url('/img/post-banner.jpg'); height: 70vh;">
     
       <div class="container">
-        <h1 class="title text-center post_title"></h1>
-        <p class="text-center"><b>Sunday, March 17th 2019, 11:24 am</b></p>
+        <h1 class="title text-center post_title">ES6-async函数</h1>
+        <p class="text-center"><b>Sunday, March 17th 2019, 11:28 am</b></p>
       </div>
     
   </div>
@@ -99,7 +99,8 @@
       <div class="container">
         <div class="section">
           <div class="post_content">
-              <h1 id="async-函数"><a href="#async-函数" class="headerlink" title="async 函数"></a>async 函数</h1><h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
+              <p>##async 函数</p>
+<h2 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h2><p>ES2017 标准引入了 async 函数，使得异步操作变得更加方便。</p>
 <p>async 函数是什么？一句话，它就是 Generator 函数的语法糖。</p>
 <p>前文有一个 Generator 函数，依次读取两个文件。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> readFile = <span class="function"><span class="keyword">function</span> (<span class="params">fileName</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    fs.readFile(fileName, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (error) <span class="keyword">return</span> reject(error);</span><br><span class="line">      resolve(data);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> gen = <span class="function"><span class="keyword">function</span>* (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> f1 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/fstab'</span>);</span><br><span class="line">  <span class="keyword">const</span> f2 = <span class="keyword">yield</span> readFile(<span class="string">'/etc/shells'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(f1.toString());</span><br><span class="line">  <span class="built_in">console</span>.log(f2.toString());</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -314,8 +315,8 @@
     <script>               
         var disqus_shortname = '';
         var disqus_config = function () {
-            this.page.url = 'http://yoursite.com/2019/03/17/ES6-async/'; 
-            this.page.identifier = '/2019/03/17/ES6-async/';
+            this.page.url = 'http://yoursite.com/2019/03/17/ES6-async函数/'; 
+            this.page.identifier = '/2019/03/17/ES6-async函数/';
         };
         (function() { 
             var d = document, s = d.createElement('script');
