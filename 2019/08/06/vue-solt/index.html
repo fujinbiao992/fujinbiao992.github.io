@@ -3,16 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>about | Hexo</title>
+  <title>vue_solt | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="const comThree = {     template: `                作用域插槽                                         `,     data () {       return {         msg: &apos;我是组件三&apos;       }">
+<meta name="keywords" content="Vue-solt插槽">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue_solt">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/vue-solt/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="const comThree = {     template: `                作用域插槽                                         `,     data () {       return {         msg: &apos;我是组件三&apos;       }">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-02T07:08:58.530Z">
+<meta property="og:updated_time" content="2019-08-06T07:20:40.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about">
+<meta name="twitter:title" content="vue_solt">
+<meta name="twitter:description" content="const comThree = {     template: `                作用域插槽                                         `,     data () {       return {         msg: &apos;我是组件三&apos;       }">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -96,10 +100,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-vue-solt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/about/index.html" class="article-date">
-  <time datetime="2019-07-02T07:08:21.000Z" itemprop="datePublished">2019-07-02</time>
+    <a href="/2019/08/06/vue-solt/" class="article-date">
+  <time datetime="2019-08-06T07:11:06.000Z" itemprop="datePublished">2019-08-06</time>
 </a>
     
   </div>
@@ -110,7 +114,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about
+      vue_solt
     </h1>
   
 
@@ -118,19 +122,65 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><div id="app"><br>    <com-three><br>      <div slot-scope="scope"><br>        <!-- scope 是标签上的所有数据的集合 --><br>        <br>      </div><br>    </com-three><br></div></p>
+<script src="vue.js"></script>
+<script>
+  const comThree = {
+    template: `
+      <div>
+        <h1>作用域插槽</h1>
+        <h2>
+          <slot :row="msg"></slot>
+        </h2>
+      </div>
+    `,
+    data () {
+      return {
+        msg: '我是组件三'
+      }
+    }
+  }
+  new Vue({
+    el: '#app',
+    data: {
+      msg: 'hello Vue!',
+      list: [
+        1, 2, 3, 4, 5
+      ]
+    },
+    methods: {},
+    components: {
+      comTwo,
+      elCard
+    }
+  })
+</script>
+
+
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/about/index.html" data-id="cjyzhvi9r000328v0e6wt8z2u" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/08/06/vue-solt/" data-id="cjyzhvi9g000028v0g0mhzewz" class="article-share-link">Share</a>
       
 
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue-solt插槽/">Vue-solt插槽</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/02/ES6-Function/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ES6-Function</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
