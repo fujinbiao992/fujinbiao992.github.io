@@ -5,18 +5,18 @@
   
   <title>vue_solt | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="const comThree = {     template: `                作用域插槽                                         `,     data () {       return {         msg: &apos;我是组件三&apos;       }">
+  <meta name="description" content="插槽 为什么要使用插槽  vue组件其实是以对一整套代码的封装(HTML,CSS,JS),但是封装的组件并没有灵活性(组件名称标签中间的位置没有用处了)插槽出现的目的就是为了弥补组件标签名称中间的位置   插槽的分类  匿名插槽   具名插槽 作用域插槽   插槽的优点 是封装组件变的更加灵活 匿名插槽和具名插槽可以直接在父组件内提供一个数据直接显示在自己组件的内部 作用域插槽的优点,就是可以让父">
 <meta name="keywords" content="Vue-solt插槽">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue_solt">
 <meta property="og:url" content="http://yoursite.com/2019/08/06/vue-solt/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="const comThree = {     template: `                作用域插槽                                         `,     data () {       return {         msg: &apos;我是组件三&apos;       }">
+<meta property="og:description" content="插槽 为什么要使用插槽  vue组件其实是以对一整套代码的封装(HTML,CSS,JS),但是封装的组件并没有灵活性(组件名称标签中间的位置没有用处了)插槽出现的目的就是为了弥补组件标签名称中间的位置   插槽的分类  匿名插槽   具名插槽 作用域插槽   插槽的优点 是封装组件变的更加灵活 匿名插槽和具名插槽可以直接在父组件内提供一个数据直接显示在自己组件的内部 作用域插槽的优点,就是可以让父">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-06T07:20:40.811Z">
+<meta property="og:updated_time" content="2019-08-06T08:49:42.088Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue_solt">
-<meta name="twitter:description" content="const comThree = {     template: `                作用域插槽                                         `,     data () {       return {         msg: &apos;我是组件三&apos;       }">
+<meta name="twitter:description" content="插槽 为什么要使用插槽  vue组件其实是以对一整套代码的封装(HTML,CSS,JS),但是封装的组件并没有灵活性(组件名称标签中间的位置没有用处了)插槽出现的目的就是为了弥补组件标签名称中间的位置   插槽的分类  匿名插槽   具名插槽 作用域插槽   插槽的优点 是封装组件变的更加灵活 匿名插槽和具名插槽可以直接在父组件内提供一个数据直接显示在自己组件的内部 作用域插槽的优点,就是可以让父">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -122,46 +122,92 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><div id="app"><br>    <com-three><br>      <div slot-scope="scope"><br>        <!-- scope 是标签上的所有数据的集合 --><br>        <br>      </div><br>    </com-three><br></div></p>
-<script src="vue.js"></script>
-<script>
-  const comThree = {
-    template: `
-      <div>
-        <h1>作用域插槽</h1>
-        <h2>
-          <slot :row="msg"></slot>
-        </h2>
-      </div>
-    `,
-    data () {
-      return {
-        msg: '我是组件三'
-      }
-    }
-  }
-  new Vue({
-    el: '#app',
-    data: {
-      msg: 'hello Vue!',
-      list: [
-        1, 2, 3, 4, 5
-      ]
-    },
-    methods: {},
-    components: {
-      comTwo,
-      elCard
-    }
-  })
-</script>
-
+        <h2 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h2><ul>
+<li><p>为什么要使用插槽</p>
+<ul>
+<li>vue组件其实是以对一整套代码的封装(HTML,CSS,JS),但是封装的组件并没有灵活性(组件名称标签中间的位置没有用处了)插槽出现的目的就是为了弥补组件标签名称中间的位置</li>
+</ul>
+</li>
+<li><p>插槽的分类</p>
+<ul>
+<li>匿名插槽</li>
+</ul>
+</li>
+<li>具名插槽<ul>
+<li>作用域插槽</li>
+</ul>
+</li>
+<li>插槽的优点<ul>
+<li>是封装组件变的更加灵活</li>
+<li>匿名插槽和具名插槽可以直接在父组件内提供一个数据直接显示在自己组件的内部</li>
+<li>作用域插槽的优点,就是可以让父子组件分别提供不一样的东西,从而组成一个新的东西</li>
+</ul>
+</li>
+</ul>
+<h2 id="插槽的基本使用方式"><a href="#插槽的基本使用方式" class="headerlink" title="插槽的基本使用方式"></a>插槽的基本使用方式</h2><h3 id="匿名插槽"><a href="#匿名插槽" class="headerlink" title="匿名插槽"></a>匿名插槽</h3><ul>
+<li><p>标签就是一个插槽</p>
+</li>
+<li><p>当自己开始封装组件的时候,直接写在子组件的template模板里面的一个标签,会自动的吸取你写在组件名称标签对里面的内容</p>
+</li>
+<li><p>一个匿名插槽可以吸取所有的内容</p>
+</li>
+<li><p>一个组件的封装里面最好知识出现一个匿名插槽,(出现多个匿名插槽的时候,是把所有的内容赋值了两份)</p>
+</li>
+<li><p>在使用匿名插槽的时候,可以有一个默认值(就写在slot标签对里面)</p>
+</li>
+<li><p>具体的使用场景如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 匿名插槽(不需要用户特殊填写内容)</span><br><span class="line">	+ 多用于封装一些简单的结构和样式使用(尽量不包含结构性质的东西)</span><br><span class="line">	+ el-button</span><br><span class="line">	+ el-tag</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">     * &#123;</span><br><span class="line">       margin: 0;</span><br><span class="line">       padding: 0;</span><br><span class="line">     &#125;</span><br><span class="line">  </span><br><span class="line">     .warning &#123;</span><br><span class="line">       background-color: yellow;</span><br><span class="line">     &#125;</span><br><span class="line">  </span><br><span class="line">     .error &#123;</span><br><span class="line">       background-color: red;</span><br><span class="line">     &#125;</span><br><span class="line">  </span><br><span class="line">     .success &#123;</span><br><span class="line">       background-color: green;</span><br><span class="line">     &#125;</span><br><span class="line"> &lt;/style&gt;</span><br><span class="line"> &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">     &lt;com-one&gt;</span><br><span class="line">         我会被匿名插槽吸走</span><br><span class="line">         &lt;p&gt;我也会被匿名插槽吸走&lt;/p&gt;</span><br><span class="line">     &lt;/com-one&gt;</span><br><span class="line"> &lt;/div&gt;</span><br><span class="line"> &lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line">     const comOne = &#123;</span><br><span class="line">     template:&apos;</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">         &lt;h1&gt;我是组件1&lt;/h1&gt;</span><br><span class="line">         &lt;h2&gt;</span><br><span class="line">           &lt;slot&gt;我是一个匿名插槽的默认值（默认值会被覆盖）&lt;/slot&gt;</span><br><span class="line">         &lt;/h2&gt;</span><br><span class="line">       &lt;el-button type=&quot;success&quot;&gt;提交&lt;/el-button&gt;</span><br><span class="line">       &lt;el-button type=&quot;error&quot;&gt;取消&lt;/el-button&gt;</span><br><span class="line">       &lt;el-button type=&quot;warning&quot;&gt;&lt;/el-button&gt;</span><br><span class="line">       &lt;/div&gt;&apos;</span><br><span class="line">   &#125;       </span><br><span class="line">    const elButton = &#123;</span><br><span class="line">     template: `</span><br><span class="line">       &lt;button :class=&quot;type&quot;&gt;</span><br><span class="line">         &lt;slot&gt;按钮&lt;/slot&gt;</span><br><span class="line">       &lt;/button&gt;</span><br><span class="line">     `,</span><br><span class="line">     props: [&apos;type&apos;]</span><br><span class="line">   &#125;</span><br><span class="line">   new Vue(&#123;</span><br><span class="line">     el: &apos;#app&apos;,</span><br><span class="line">     data: &#123;</span><br><span class="line">       msg: &apos;hello Vue!&apos;,</span><br><span class="line">       list: [</span><br><span class="line">         1, 2, 3, 4, 5</span><br><span class="line">       ]</span><br><span class="line">     &#125;,</span><br><span class="line">     methods: &#123;&#125;,</span><br><span class="line">     components: &#123;</span><br><span class="line">       comOne,</span><br><span class="line">       elButton</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"> &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h3><ul>
+<li><p>这个标签就是一个叫做a的具名插槽</p>
+</li>
+<li><p>这个插槽会吸取你写在组件名称标签对里面一些特定的内容</p>
+</li>
+<li><p>这个特定内容就是一些指定了名字的标签</p>
+</li>
+<li><p>有一个叫做solt的属性,一个可以直接写在元素的属性上,专门用来指定这个元素的所属</p>
+</li>
+<li><p>具名插槽是可以和匿名插槽一起使用的,他们之间互相并没有干扰(匿名插槽吸取的是非特定元素,具名插槽只吸取属于自己名称元素)</p>
+</li>
+<li><p>没有任何的位置限制</p>
+</li>
+<li><p>当使用多个插槽内容混合在一起使用的时候,没有任何的位置关系</p>
+</li>
+<li><p>多个具名插槽之间没有任何的影响</p>
+</li>
+<li><p>具名插槽是没有任何默认值的</p>
+</li>
+<li><p>具体使用场景</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">具名插槽（需要用户多家一个 slot 属性）</span><br><span class="line">   + 多用于一些带有结构的封装的时候使用</span><br><span class="line">   + el-card</span><br><span class="line">   + el-table</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">com-two</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        当使用 slot 属性把它变成一个特定的元素以后</span></span><br><span class="line"><span class="comment">        那么就只有特殊的 slot 标签（也就是具名插槽） 可以吸收</span></span><br><span class="line"><span class="comment">        别的插槽不能吸收了</span></span><br><span class="line"><span class="comment">        这个有名字的 p 标签只能被一个叫做 a 的具名插槽吸收</span></span><br><span class="line"><span class="comment">      --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123; msg &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"b"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"a"</span>&gt;</span>abcd<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">slot</span>=<span class="string">"a"</span>&gt;</span>abcd<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>我是非特定元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">com-two</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-card</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">h1</span> <span class="attr">slot</span>=<span class="string">"title"</span>&gt;</span>我是一个标题<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item, index) in list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span>&#123;&#123; item &#125;&#125;    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-card</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"vue.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  const comTwo = &#123;</span></span><br><span class="line"><span class="undefined">    template: /*html*/`</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">h1</span>&gt;</span>具名插槽<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"a"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"b"</span>&gt;</span>asdasdasd<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    `</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">    const elCard = &#123;</span></span><br><span class="line"><span class="undefined">    template: `</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">"title"</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">section</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">slot</span>&gt;</span><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="undefined">    `</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  new Vue(&#123;</span></span><br><span class="line"><span class="undefined">    el: '#app',</span></span><br><span class="line"><span class="undefined">    data: &#123;</span></span><br><span class="line"><span class="undefined">      msg: 'hello Vue!',</span></span><br><span class="line"><span class="undefined">      list: [</span></span><br><span class="line"><span class="undefined">        1, 2, 3, 4, 5</span></span><br><span class="line"><span class="undefined">      ]</span></span><br><span class="line"><span class="undefined">    &#125;,</span></span><br><span class="line"><span class="undefined">    methods: &#123;&#125;,</span></span><br><span class="line"><span class="undefined">    components: &#123;</span></span><br><span class="line"><span class="undefined">      comTwo,</span></span><br><span class="line"><span class="undefined">      elCard</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">  &#125;)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h3><ul>
+<li><p>solt-scope=”scope”这个东西叫做作用域插槽</p>
+</li>
+<li><p>首先它自己本身并不是一个标签</p>
+</li>
+<li><p>是和匿名插槽还有具名插槽混合使用的一个插槽</p>
+</li>
+<li><p>本质就是将在子组件中的内容拿到外面来使用</p>
+</li>
+<li><p>直接在子组件内的slot标签上动态的绑定一个数据</p>
+</li>
+<li><p>使用场景</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">父组件提供结构</span><br><span class="line">+ 子组件提供数据</span><br><span class="line">+ el-table</span><br><span class="line"> = 自定义列内容的时候</span><br><span class="line"> = 父组件内部提供了列内容的结构</span><br><span class="line"> = 使用的数据是 el-column 这个子组件里面的数据（scope.row.xxx）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;com-three&gt;</span><br><span class="line">      &lt;div slot-scope=&quot;scope&quot;&gt;</span><br><span class="line">        &lt;!-- scope 是标签上的所有数据的集合 --&gt;</span><br><span class="line">        &#123;&#123; scope.row &#125;&#125;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/com-three&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;vue.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  const comThree = &#123;</span><br><span class="line">    template: `</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;h1&gt;作用域插槽&lt;/h1&gt;</span><br><span class="line">        &lt;h2&gt;</span><br><span class="line">          &lt;slot :row=&quot;msg&quot;&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/h2&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    `,</span><br><span class="line">    data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        msg: &apos;我是组件三&apos;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  new Vue(&#123;</span><br><span class="line">    el: &apos;#app&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">      msg: &apos;hello Vue!&apos;,</span><br><span class="line">      list: [</span><br><span class="line">        1, 2, 3, 4, 5</span><br><span class="line">      ]</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;&#125;,</span><br><span class="line">    components: &#123;</span><br><span class="line">      comTwo,</span><br><span class="line">      elCard</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<p>​    </p>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/08/06/vue-solt/" data-id="cjyzi1vz40000hgv02z3geux5" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/08/06/vue-solt/" data-id="cjyzl1xxw0000hgv0n35qly00" class="article-share-link">Share</a>
       
 
       
