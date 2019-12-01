@@ -3,15 +3,15 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>一名路过的小码农</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="一名路过的小码农">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="一名路过的小码农">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="一名路过的小码农">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -32,7 +32,7 @@
       <div class="logo">
         <img src="/logo.png" alt="Profile Picture">
       </div>
-      <div id="title">Hexo</div>
+      <div id="title">一名路过的小码农</div>
       
        <ul class="my-socials">
   
@@ -56,7 +56,7 @@
       -->
     </nav>
     <nav id="title-nav" style="display:none">
-      <a href="/">Hexo</a>
+      <a href="/">一名路过的小码农</a>
       <img src="/logo.png" alt="Profile Picture">
       <!--
       <span id="title-nav-socials">
@@ -124,16 +124,16 @@
         <h3 id="methos与watch和computed都是以函数为基础的"><a href="#methos与watch和computed都是以函数为基础的" class="headerlink" title="methos与watch和computed都是以函数为基础的"></a>methos与watch和computed都是以函数为基础的</h3><h4 id="1-computed"><a href="#1-computed" class="headerlink" title="1- computed"></a>1- computed</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 当页面中某些数据依赖其它数据进行变动的时候,可以使用计算属性</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;one1Data&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>div&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">     <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">      el : <span class="string">'#app'</span>,</span><br><span class="line">      data : &#123; </span><br><span class="line">        oneData:<span class="string">'jack'</span>,</span><br><span class="line">        twoData:<span class="string">'rows'</span></span><br><span class="line">       &#125;,</span><br><span class="line">      methods : &#123; &#125;,</span><br><span class="line">      computed: &#123;</span><br><span class="line">        one1Data:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">          <span class="keyword">return</span> <span class="keyword">this</span>.oneData+<span class="keyword">this</span>.twoData</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; </span><br><span class="line">    &#125;);</span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
 <p>####需要注意的是,就算在data中没有直接声明出要计算的属性,也可以直接在computed中写入,计算属性默认的只有getter属性,在需要的时候写上setter</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">      &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">          &lt;p&gt;&#123;&#123;one1Data&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">      &lt;script&gt;</span><br><span class="line">          <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">              el: <span class="string">'#app'</span>,</span><br><span class="line">              data: &#123;</span><br><span class="line">                firstName: <span class="string">'jack1'</span>,</span><br><span class="line">                lastName: <span class="string">'rows'</span></span><br><span class="line">              &#125;,</span><br><span class="line">              computed: &#123;</span><br><span class="line">                  one1Data: &#123;</span><br><span class="line">                      <span class="keyword">get</span>: function () &#123;</span><br><span class="line">                          <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="keyword">this</span>.lastName</span><br><span class="line">                      &#125;,</span><br><span class="line">                      <span class="keyword">set</span>: function (newValue) &#123;</span><br><span class="line">                          <span class="keyword">var</span> names = newValue.split(<span class="string">' '</span>)</span><br><span class="line">                          <span class="keyword">this</span>.firstName = names[<span class="number">0</span>]</span><br><span class="line">                          <span class="keyword">this</span>.lastName = names[names.length - <span class="number">1</span>]</span><br><span class="line">                      &#125;</span><br><span class="line">                  &#125;</span><br><span class="line"></span><br><span class="line">              &#125;,</span><br><span class="line">              methods: &#123;&#125;</span><br><span class="line">          &#125;);</span><br><span class="line">      &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="在控制台输入直接运行vm-fullName-‘bibi-wang’，相应的firstName和lastName也会改变。"><a href="#在控制台输入直接运行vm-fullName-‘bibi-wang’，相应的firstName和lastName也会改变。" class="headerlink" title="在控制台输入直接运行vm.fullName = ‘bibi wang’，相应的firstName和lastName也会改变。"></a>在控制台输入直接运行vm.fullName = ‘bibi wang’，相应的firstName和lastName也会改变。</h4><p><img src="D:\blog\source\_posts\computed.png" alt="computed"></p>
+<h4 id="在控制台输入直接运行vm-fullName-‘bibi-wang’，相应的firstName和lastName也会改变。"><a href="#在控制台输入直接运行vm-fullName-‘bibi-wang’，相应的firstName和lastName也会改变。" class="headerlink" title="在控制台输入直接运行vm.fullName = ‘bibi wang’，相应的firstName和lastName也会改变。"></a>在控制台输入直接运行vm.fullName = ‘bibi wang’，相应的firstName和lastName也会改变。</h4><p><img src="images\computed.png" alt></p>
 <h3 id="2-watch"><a href="#2-watch" class="headerlink" title="2-watch"></a>2-watch</h3><h4 id="watch和computed两者很相似-watch用于观察和监听页面上的vue实例-在大部分情况下会使用computed-但是如果在数据变化的同时进行异步操作或者是比较大的开销-那么watch为最佳的选择-watch为一个对象-键是需要观察的表达式-值是对应的回调函数-值也可以是方法名-或者包含选项的对象"><a href="#watch和computed两者很相似-watch用于观察和监听页面上的vue实例-在大部分情况下会使用computed-但是如果在数据变化的同时进行异步操作或者是比较大的开销-那么watch为最佳的选择-watch为一个对象-键是需要观察的表达式-值是对应的回调函数-值也可以是方法名-或者包含选项的对象" class="headerlink" title="watch和computed两者很相似,watch用于观察和监听页面上的vue实例,在大部分情况下会使用computed,但是如果在数据变化的同时进行异步操作或者是比较大的开销,那么watch为最佳的选择,watch为一个对象,键是需要观察的表达式,值是对应的回调函数,值也可以是方法名,或者包含选项的对象"></a>watch和computed两者很相似,watch用于观察和监听页面上的vue实例,在大部分情况下会使用computed,但是如果在数据变化的同时进行异步操作或者是比较大的开销,那么watch为最佳的选择,watch为一个对象,键是需要观察的表达式,值是对应的回调函数,值也可以是方法名,或者包含选项的对象</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;div id=<span class="string">"app"</span>&gt;&lt;/div&gt;</span><br><span class="line">        &lt;script&gt;</span><br><span class="line">            <span class="keyword">const</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">                el: <span class="string">'#app'</span>,</span><br><span class="line">                data: &#123;</span><br><span class="line">                    firstName: <span class="string">'Foo'</span>,</span><br><span class="line">                    lastName: <span class="string">'Bar'</span>,</span><br><span class="line">                    fullName: <span class="string">'Foo Bar'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                watch: &#123;</span><br><span class="line">                    firstName: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">this</span>.fullName = val + <span class="string">' '</span> + <span class="keyword">this</span>.lastName</span><br><span class="line">                    &#125;,</span><br><span class="line">                    lastName: <span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">this</span>.fullName = <span class="keyword">this</span>.firstName + <span class="string">' '</span> + val</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                methods: &#123;&#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="comment">// 如果使用watch,在data中没有对象属性的话,是不能使用的,这是和computed的区别</span></span><br><span class="line">        &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="D:\blog\source\_posts\watch.png" alt></p>
+<p><img src="images\watch.png" alt></p>
 <h3 id="3-methods"><a href="#3-methods" class="headerlink" title="3- methods"></a>3- methods</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">方法，跟前面的都不一样，我们通常在这里面写入方法，只要调用就会重新执行一次，相应的有一些触发条件，在某些时候methods和computed看不出来具体的差别，但是一旦在运算量比较复杂的页面中，就会体现出不一样。</span><br><span class="line"></span><br><span class="line">需要注意的是，computed是具有缓存的，这就意味着只要计算属性的依赖没有进行相应的数据更新，那么computed会直接从缓存中获取值，多次访问都会返回之前的计算结果。</span><br><span class="line"></span><br><span class="line">总结：</span><br><span class="line"></span><br><span class="line">在computed和watch方面，一个是计算，一个是观察，在语义上是有区别的。</span><br><span class="line"></span><br><span class="line">计算是通过变量计算来得出数据。而观察是观察一个特定的值，根据被观察者的变动进行相应的变化，在特定的场景下不能相互混用，所以还是需要注意api运用的合理性和语义性。</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/11/06/Vue-watch-computed-methods的区别/" data-id="ck2scz6s70000hwv0bdlosbns" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/11/06/Vue-watch-computed-methods的区别/" data-id="ck2srlso30000g0v05781ctd3" class="article-share-link">Share</a>
       
 
       
@@ -183,7 +183,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/08/16/javaScript函数及周边问题汇总/" data-id="ck2scz6ss0004hwv0nuzyvt3k" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/08/16/javaScript函数及周边问题汇总/" data-id="ck2srlsos0005g0v01fcoe7j8" class="article-share-link">Share</a>
       
 
       
@@ -306,7 +306,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/08/06/vue-solt/" data-id="ck2scz6sm0002hwv0h608qn4o" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/08/06/vue-solt/" data-id="ck2srlsoq0003g0v0fgjrw2bg" class="article-share-link">Share</a>
       
 
       
@@ -609,7 +609,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/07/02/ES6-Function/" data-id="ck2scz6u4000dhwv0k3z9htje" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/07/02/ES6-Function/" data-id="ck2srlsqg000bg0v0u9py21ix" class="article-share-link">Share</a>
       
 
       
@@ -841,7 +841,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/05/29/ES6-Promise/" data-id="ck2scz6u2000chwv0jiw4njmk" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/05/29/ES6-Promise/" data-id="ck2srlsqi000cg0v0m2p82hg3" class="article-share-link">Share</a>
       
 
       
@@ -1024,7 +1024,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/03/21/ES6-const-let/" data-id="ck2scz6tr000ahwv0vslt6xsf" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/03/21/ES6-const-let/" data-id="ck2srlsq0000ag0v0f9eza9k8" class="article-share-link">Share</a>
       
 
       
@@ -1249,7 +1249,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/03/17/ES6-async函数/" data-id="ck2scz6u1000bhwv04wghq9zg" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/03/17/ES6-async函数/" data-id="ck2srlsql000eg0v04pmlzf6w" class="article-share-link">Share</a>
       
 
       
@@ -1729,7 +1729,7 @@
     </div>
     <footer class="article-footer">
       
-        <a data-url="http://yoursite.com/2019/02/12/ES6-arraybuffer/" data-id="ck2scz6uc000ihwv0fx6xkv50" class="article-share-link">Share</a>
+        <a data-url="http://yoursite.com/2019/02/12/ES6-arraybuffer/" data-id="ck2srlsqw000ig0v0oo82fn59" class="article-share-link">Share</a>
       
 
       
@@ -1751,7 +1751,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2019 小彪彪<br>
       Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
