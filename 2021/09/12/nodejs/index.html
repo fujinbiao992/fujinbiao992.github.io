@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>一名路过的小码农</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 前言]1.1-node是用来做什么的个人理解，node可以用来搭建微服务器，为需要者提供接口，类似于我们传统的后端开发（php&#x2F;java等），也可单独运行一个小型项目。 1.2 node中的内置模块既然node属于类后端开发，要想搭建一个服务器或者提供数据接口，那肯定有很多的依赖需求，例如：读写文件、处理路径、url地址处理等，需要依赖一些模块才可完成. 那node中存在哪些模块呢？ 请前往">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一名路过的小码农">
+<meta property="og:url" content="https://fujinbiao992.github.io/2021/09/12/nodejs/index.html">
+<meta property="og:site_name" content="一名路过的小码农">
+<meta property="og:description" content="1. 前言]1.1-node是用来做什么的个人理解，node可以用来搭建微服务器，为需要者提供接口，类似于我们传统的后端开发（php&#x2F;java等），也可单独运行一个小型项目。 1.2 node中的内置模块既然node属于类后端开发，要想搭建一个服务器或者提供数据接口，那肯定有很多的依赖需求，例如：读写文件、处理路径、url地址处理等，需要依赖一些模块才可完成. 那node中存在哪些模块呢？ 请前往">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-09-12T07:23:31.119Z">
+<meta property="article:modified_time" content="2021-09-12T07:23:13.156Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/SuperMan.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<link rel="stylesheet" href="/css/scrollUp/image.css">
+
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">一名路过的小码农</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          
+            <a class="main-nav-link" href="/">首页</a>
+          
+            <a class="main-nav-link" href="/categories/life">生活</a>
+          
+            <a class="main-nav-link" href="/archives">归档</a>
+          
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">一名路过的小码农</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="http://www.baidu.com/baidu" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="fujinbiao992.github.io">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+      
+      
+        <li><a href="/">首页</a></li>
+      
+        <li><a href="/categories/life">生活</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/09/12/nodejs/" class="article-date">
+  <time datetime="2021-09-12T07:23:31.119Z" itemprop="datePublished">2021-09-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言]"></a>1. 前言]</h2><h3 id="1-1-node是用来做什么的"><a href="#1-1-node是用来做什么的" class="headerlink" title="1.1-node是用来做什么的"></a>1.1-node是用来做什么的</h3><p>个人理解，node可以用来搭建微服务器，为需要者提供接口，类似于我们传统的后端开发（php/java等），也可单独运行一个小型项目。</p>
+<h3 id="1-2-node中的内置模块"><a href="#1-2-node中的内置模块" class="headerlink" title="1.2 node中的内置模块"></a>1.2 node中的内置模块</h3><p>既然node属于类后端开发，要想搭建一个服务器或者提供数据接口，那肯定有很多的依赖需求，例如：读写文件、处理路径、url地址处理等，需要依赖一些模块才可完成.</p>
+<p>那node中存在哪些模块呢？</p>
+<p>请前往第二章节开始学习。</p>
+<h2 id="2-开始学习"><a href="#2-开始学习" class="headerlink" title="2. 开始学习"></a>2. 开始学习</h2><h3 id="2-1-准备工作"><a href="#2-1-准备工作" class="headerlink" title="2.1 准备工作"></a>2.1 准备工作</h3><p>在学习之前，要确保系统中安装了node，可以去官网下载安装</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://nodejs.cn/download/">node官方下载地址</a></p>
+<p>安装完成后，可以再cmd命令行中执行node -v，如果有版本号，证明安装成功；如果没有，请确保node安装目录已经添加到计算机path环境变量中</p>
+<h3 id="2-2-node中常见内置模块"><a href="#2-2-node中常见内置模块" class="headerlink" title="2.2 node中常见内置模块"></a>2.2 node中常见内置模块</h3><p>常见内置模块有：</p>
+<blockquote>
+<p>Web模块—http模块：用来创建Web服务器</p>
+</blockquote>
+<blockquote>
+<p>文件系统模块—fs模块：进行文件操作</p>
+</blockquote>
+<blockquote>
+<p>URL模块：处理浏览器端请求（GET/POST等）</p>
+</blockquote>
+<blockquote>
+<p>工具模块：OS模块、Path模块、Net模块、DNS模块、Domain模块</p>
+</blockquote>
+<p>以上为常用模块，当然，内置模块远不止这些，如有需要，可以参考<a target="_blank" rel="noopener" href="http://nodejs.cn/api/">Node.js官方API文档</a></p>
+<p>接下来，将要学习列出的模块。</p>
+<h3 id="2-3-HTTP模块"><a href="#2-3-HTTP模块" class="headerlink" title="2.3 HTTP模块"></a>2.3 HTTP模块</h3><h4 id="2-3-1-使用http模块搭建服务器"><a href="#2-3-1-使用http模块搭建服务器" class="headerlink" title="2.3.1 使用http模块搭建服务器"></a>2.3.1 使用http模块搭建服务器</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.导入模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.创建服务器</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 设置端口号，启动服务</span></span><br><span class="line">server.listen(<span class="number">5678</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;node服务已启动，请在浏览器输入http://127.0.0.1:5678访问&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 监听浏览器端请求</span></span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(req)</span><br><span class="line">&#125;)Copy to clipboardErrorCopied</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-2-http模块解读"><a href="#2-3-2-http模块解读" class="headerlink" title="2.3.2 http模块解读"></a>2.3.2 http模块解读</h4><p>在监听浏览器端请求的回调函数中，<code>req代表请求</code>，<code>res代表响应</code>。</p>
+<p>如果有关于对请求的处理（判断请求方式、处理请求参数、获取请求url等），一定要使用req，否则，使用res</p>
+<p>例如：如果请求地址为：<a target="_blank" rel="noopener" href="http://127.0.0.1:5678/index?id=1">http://127.0.0.1:5678/index?id=1</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> server = http.createServer()</span><br><span class="line">server.listen(<span class="number">5678</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;node服务已启动，请在浏览器输入http://127.0.0.1:5678访问&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// req.url  ---  /index?id=1 获取的是端口号之后的url</span></span><br><span class="line">    <span class="comment">// req.method  ---  GET</span></span><br><span class="line">    <span class="comment">// req.headers --- 请求头信息</span></span><br><span class="line">&#125;)Copy to clipboardErrorCopied</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-3-如何接收get请求的参数"><a href="#2-3-3-如何接收get请求的参数" class="headerlink" title="[2.3.3 如何接收get请求的参数]"></a>[2.3.3 如何接收get请求的参数]</h4><p>在http模块中，想要接收get请求的参数，需要借助<code>url模块</code>对<code>req.url</code>进行处理</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)   <span class="comment">//  引入url模块</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer()</span><br><span class="line">server.listen(<span class="number">5678</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;node服务已启动，请在浏览器输入http://127.0.0.1:5678访问&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(req.method == <span class="string">&#x27;GET&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> params = url.parse(req.url,<span class="literal">true</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(params) </span><br><span class="line">        <span class="comment">/* 结果: </span></span><br><span class="line"><span class="comment">        Url &#123;</span></span><br><span class="line"><span class="comment">              protocol: null,</span></span><br><span class="line"><span class="comment">              slashes: null,</span></span><br><span class="line"><span class="comment">              auth: null,</span></span><br><span class="line"><span class="comment">              host: null,</span></span><br><span class="line"><span class="comment">              port: null,</span></span><br><span class="line"><span class="comment">              hostname: null,</span></span><br><span class="line"><span class="comment">              hash: null,</span></span><br><span class="line"><span class="comment">              search: &#x27;?id=1&#x27;,</span></span><br><span class="line"><span class="comment">              query: &#123; id: &#x27;1&#x27; &#125;,</span></span><br><span class="line"><span class="comment">              pathname: &#x27;/index&#x27;,</span></span><br><span class="line"><span class="comment">              path: &#x27;/index?id=1&#x27;,</span></span><br><span class="line"><span class="comment">              href: &#x27;/index?id=1&#x27; </span></span><br><span class="line"><span class="comment">        &#125; */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)Copy to clipboardErrorCopied</span><br></pre></td></tr></table></figure>
+
+<p>解读：url.parse()支持两个参数：<code>url</code>：需要处理的url；<code>true/false</code>:true可以将url中的参数处理为对象形式，false则处理为字符串形式</p>
+<p>接着，我们就可以通过<code>params.query.id</code>和<code>params.pathname</code>来获取参数和不带参数的地址了</p>
+<p>注：以上使用<code>url.parse()</code>为旧版本遗留的 API ，除此之外，还可使用 WHATWG标准的新 API ，详见下文2.4章节</p>
+<h4 id="2-3-4-如何接收POST请求参数"><a href="#2-3-4-如何接收POST请求参数" class="headerlink" title="2.3.4 如何接收POST请求参数"></a>2.3.4 如何接收POST请求参数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> server = http.createServer()</span><br><span class="line">server.listen(<span class="number">5678</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;node服务已启动，请在浏览器输入http://127.0.0.1:5678访问&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(req.method == <span class="string">&#x27;POST&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> str = <span class="string">&#x27;&#x27;</span></span><br><span class="line">        req.on(<span class="string">&#x27;data&#x27;</span>,<span class="function">(<span class="params">chunk</span>)=&gt;</span>&#123;</span><br><span class="line">            str += chunk</span><br><span class="line">        &#125;)</span><br><span class="line">        req.on(<span class="string">&#x27;end&#x27;</span>,<span class="function">()=&gt;</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(str)</span><br><span class="line">            <span class="comment">// 结果：  id=1</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)Copy to clipboardErrorCopied</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-URL模块"><a href="#2-4-URL模块" class="headerlink" title="2.4 URL模块"></a>2.4 URL模块</h3><h4 id="2-4-1-遗留API"><a href="#2-4-1-遗留API" class="headerlink" title="2.4.1 遗留API"></a>2.4.1 遗留API</h4><p>在URL模块中，之前经常使用的处理url的API为<code>url.parse()</code>,下面看详解。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> url = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)   <span class="comment">//  引入url模块</span></span><br><span class="line"><span class="keyword">const</span> server = http.createServer()</span><br><span class="line">server.listen(<span class="number">5678</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;node服务已启动，请在浏览器输入http://127.0.0.1:5678访问&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line">server.on(<span class="string">&#x27;request&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(req.method == <span class="string">&#x27;GET&#x27;</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> params = url.parse(req.url,<span class="literal">true</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(params) </span><br><span class="line">        <span class="comment">/* 结果: </span></span><br><span class="line"><span class="comment">        Url &#123;</span></span><br><span class="line"><span class="comment">              protocol: null,</span></span><br><span class="line"><span class="comment">              slashes: null,</span></span><br><span class="line"><span class="comment">              auth: null,</span></span><br><span class="line"><span class="comment">              host: null,</span></span><br><span class="line"><span class="comment">              port: null,</span></span><br><span class="line"><span class="comment">              hostname: null,</span></span><br><span class="line"><span class="comment">              hash: null,</span></span><br><span class="line"><span class="comment">              search: &#x27;?id=1&#x27;,</span></span><br><span class="line"><span class="comment">              query: &#123; id: &#x27;1&#x27; &#125;,</span></span><br><span class="line"><span class="comment">              pathname: &#x27;/index&#x27;,</span></span><br><span class="line"><span class="comment">              path: &#x27;/index?id=1&#x27;,</span></span><br><span class="line"><span class="comment">              href: &#x27;/index?id=1&#x27; </span></span><br><span class="line"><span class="comment">        &#125; */</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)Copy to clipboardErrorCopied</span><br></pre></td></tr></table></figure>
+
+<p>上面代码中，使用了<code>url.parse()</code>来处理了get请求的url，目的是为了获得get中的参数。</p>
+<p><code>url.parse()</code>需要的参数： ① 需要处理的url； ②true/false</p>
+<p>上述代码得到的结果中可以看出，结果为一个URL对象，该对象中包含很多属性。</p>
+<p>如果<code>url.parse()</code>的第二个参数为true，则会把URL对象中的<code>query</code>属性转为对象的形式；如果参数为false，则转为字符串处理</p>
+<h4 id="2-4-2-最新使用方法"><a href="#2-4-2-最新使用方法" class="headerlink" title="2.4.2 最新使用方法"></a>2.4.2 最新使用方法</h4><p>遗留的 API 还没有被废弃，保留是为了兼容已存在的应用程序。 新的应用程序应使用 WHATWG 的 API。</p>
+<h5 id="2-1-2-1-基本使用"><a href="#2-1-2-1-基本使用" class="headerlink" title="2.1.2.1 基本使用"></a>2.1.2.1 基本使用</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> url = <span class="string">&#x27;https://www.example.org/a/b/c?id=1&amp;name=tom&amp;age=18&#x27;</span></span><br><span class="line"><span class="keyword">const</span> myUrl = <span class="keyword">new</span> URL(url)Copy to clipboardErrorCopied</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-4-2-2-使用详解"><a href="#2-4-2-2-使用详解" class="headerlink" title="2.4.2.2 使用详解"></a>2.4.2.2 使用详解</h5><p>我们使用 <code>new URL()</code>来解析和处理url，并得到一个<code>myUrl</code>对象。</p>
+<p>在实例化(new)时，需要传入两个参数：①要解析的url（必须） ②要解析的基本url【可选】</p>
+<p>实例化URL时传入的url须为一个完成的url，如果不完整，则使用第二个参数。</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> myUrl = <span class="keyword">new</span> URL(<span class="string">&#x27;/foo&#x27;</span>, <span class="string">&#x27;https://example.org/&#x27;</span>)</span><br><span class="line"><span class="comment">// 结果：https://example.org/fooCopy to clipboardErrorCopied</span></span><br></pre></td></tr></table></figure>
+
+<p>myUrl对象中包含多个属性，如：myUrl.hash、myUrl.host、myUrl.hostname、myUrl.href、myUrl.origin、myUrl.pathname、myUrl.port、myUrl.search、myUrl.searchParams等</p>
+<ul>
+<li><p><strong>myUrl.hash</strong></p>
+<p>获取及设置URL的分段(hash)部分。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> myUrl = <span class="keyword">new</span> URL(<span class="string">&#x27;https://example.org/foo#bar&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(myUrl.hash)  <span class="comment">// 输出 #bar</span></span><br><span class="line"></span><br><span class="line">myUrl.hash = <span class="string">&#x27;baz&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(myUrl.href)  <span class="comment">// 输出 https://example.org/foo#bazCopy to clipboardErrorCopied</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>myUrl.host</strong></p>
+<p>获取及设置URL的主机(host)部分。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> myUrl = <span class="keyword">new</span> URL(<span class="string">&#x27;https://example.org:81/foo&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(myUrl.host) <span class="comment">// 输出 example.org:81</span></span><br><span class="line"></span><br><span class="line">myUrl.host = <span class="string">&#x27;example.com:82&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(myUrl.href)  <span class="comment">// 输出 https://example.com:82/fooCopy to clipboardErrorCopied</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>myUrl.href</strong></p>
+<p>获取及设置序列化的URL</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> myUrl = <span class="keyword">new</span> URL(<span class="string">&#x27;https://example.org/foo&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(myUrl.href)  <span class="comment">// 输出 https://example.org/foo</span></span><br><span class="line"></span><br><span class="line">myUrl.href = <span class="string">&#x27;https://example.com/bar&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(myUrl.href)   <span class="comment">// 输出 https://example.com/barCopy to clipboardErrorCopied</span></span><br></pre></td></tr></table></figure></li>
+<li><p><strong>myUrl.origin</strong></p>
+<p>获取只读序列化的URL origin部分</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> myUrl = <span class="keyword">new</span> URL(<span class="string">&#x27;https://example.org/foo/bar?baz&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(myUrl.origin)   <span class="comment">// 输出 https://example.orgCopy to clipboardErrorCopied</span></span><br></pre></td></tr></table></figure>
+
+<p><code>特殊情况：</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; URL &#125; = <span class="built_in">require</span>(<span class="string">&#x27;url&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> idnURL = <span class="keyword">new</span> URL(<span class="string">&#x27;https://你好你好&#x27;</span>)</span><br><span class="line"><span class="built_in">console</span>.log(idnURL.origin)  <span class="comment">// 输出 https://xn--6qqa088ebaCopy to clipboardErrorCopied</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="https://fujinbiao992.github.io/2021/09/12/nodejs/" data-id="cktgw51g50000hou4g3er9ala" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2021/09/12/Vue%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/12/ECMAScript6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 John Doe<br>
+      Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/categories/life" class="mobile-nav-link">生活</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+
+
+<script src="/js/jquery.transform.js"></script>
+
+
+<script src="/js/menu.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/scrollUp.js"></script>
+
+
+  </div>
+</body>
+</html>
